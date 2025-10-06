@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="uz">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mahsulotlar</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div class="drawer" id="drawer">
+      <div class="drawer-header">
+        <h2>
+          <i class="fas fa-shopping-cart"></i>
+          Mening Savatcham
+        </h2>
+        <button class="close-drawer" id="closeDrawer">
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
+      <div class="drawer-content" id="drawerContent"></div>
+      <div class="cart-total" id="cartTotal">
+        <i class="fas fa-calculator"></i>git add README.md
+        Jami: $0.00
+      </div>
+    </div>
+
+    <div class="container">
+      <header>
+        <h1>
+          <i class="fas fa-boxes"></i>
+          Mahsulotlar Boshqaruvi
+        </h1>
+        <button class="cart-btn" id="cartBtn">
+          <i class="fas fa-shopping-cart"></i>
+          Savatcha
+          <span class="cart-count" id="cartCount">0</span>
+        </button>
+      </header>
+
+      <main>
+        <section class="form-section">
+          <h3>
+            <i class="fas fa-plus-circle"></i>
+            Yangi Mahsulot Qo'shish
+          </h3>
+          <form id="productForm">
+            <div class="form-group">
+              <label for="productName">
+                <i class="fas fa-tag"></i>
+                Mahsulot Nomi:
+              </label>
+              <input type="text" id="productName" name="productName" required />
+            </div>
+            <div class="form-group">
+              <label for="imageUrl">
+                <i class="fas fa-image"></i>
+                Rasm URL:
+              </label>
+              <input type="url" id="imageUrl" name="imageUrl" required />
+            </div>
+            <div class="form-group">
+              <label for="price">
+                <i class="fas fa-dollar-sign"></i>
+                Narxi ($):
+              </label>
+              <input
+                type="number"
+                id="price"
+                name="price"
+                min="0"
+                step="0.01"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label for="quantity">
+                <i class="fas fa-sort-amount-up"></i>
+                Sotib olish soni:
+              </label>
+              <input
+                type="number"
+                id="quantity"
+                name="quantity"
+                min="1"
+                required
+              />
+            </div>
+            <div class="checkbox-group">
+              <input type="checkbox" id="isAvailable" name="isAvailable" />
+              <label for="isAvailable">
+                <i class="fas fa-percentage"></i>
+                Skidka bor
+              </label>
+            </div>
+            <div class="form-group discount-group" id="discountGroup">
+              <label for="discount">
+                <i class="fas fa-tags"></i>
+                Skidka foizi:
+              </label>
+              <input
+                type="number"
+                id="discount"
+                name="discount"
+                min="0"
+                max="100"
+                step="1"
+                placeholder="%"
+              />
+            </div>
+            <div class="button-group">
+              <button type="submit" class="btn-submit">
+                <i class="fas fa-plus"></i>
+                Mahsulot Qo'shish
+              </button>
+            </div>
+          </form>
+        </section>
+
+        <aside class="sidebar">
+          <div class="filter-section">
+            <h3>
+              <i class="fas fa-filter"></i>
+              Filtrlar
+            </h3>
+            <div class="filter-group">
+              <label for="filterSelect">
+                <i class="fas fa-sort"></i>
+                Tartiblash:
+              </label>
+              <select id="filterSelect">
+                <option value="">Filtrni tanlang</option>
+                <option value="az">A-Z (Alfabet)</option>
+                <option value="za">Z-A (Alfabet teskari)</option>
+                <option value="priceHigh">Narx yuqoridan pastga</option>
+                <option value="priceLow">Narx pastdan yuqoriga</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="list-section">
+            <h3>
+              <i class="fas fa-list"></i>
+              Mahsulotlar Ro'yxati
+            </h3>
+            <div class="product-list" id="productList"></div>
+          </div>
+        </aside>
+      </main>
+    </div>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
